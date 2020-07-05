@@ -3,17 +3,19 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel src/index.html --open",
+    "dev": "parcel src/*.html",
     "build": "parcel build src/*.html"
   },
   "author": "Anthony Halliday",
   "license": "ISC",
   "devDependencies": {
+    "cssnano": "^4.1.10",
+    "posthtml": "^0.13.1",
+    "posthtml-img-autosize": "^0.1.5",
+    "posthtml-modules": "^0.6.1",
     "sass": "^1.26.9"
   },
   "dependencies": {
-    "js": "^0.1.0",
-    "src": "^1.1.2",
     "wow.js": "^1.2.2"
   }
 }
