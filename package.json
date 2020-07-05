@@ -10,6 +10,7 @@
   "license": "ISC",
   "devDependencies": {
     "cssnano": "^4.1.10",
+    "parcel-plugin-imagemin": "^4.0.1",
     "posthtml": "^0.13.1",
     "posthtml-img-autosize": "^0.1.5",
     "posthtml-modules": "^0.6.1",
