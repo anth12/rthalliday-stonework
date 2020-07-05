@@ -1,0 +1,19 @@
+{
+  "name": "rthalliday-stonework",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel src/index.html --open",
+    "build": "parcel build src/*.html"
+  },
+  "author": "Anthony Halliday",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.26.9"
+  },
+  "dependencies": {
+    "js": "^0.1.0",
+    "src": "^1.1.2",
+    "wow.js": "^1.2.2"
+  }
+}
