@@ -4,7 +4,12 @@
 <head>
 	<meta charset="utf-8">
 
+	<if condition="pageTitle == 'Home'">
 	<title>RT Halliday Stonework, Masonry &amp; Construction | {{ pageTitle }}</title>
+	</if>
+	<else>
+		<title>{{ pageTitle }} | RT Halliday Stonework, Masonry &amp; Construction</title>
+	</else>
 	<meta property="og:title" content="RT Halliday Stonework, Masonry &amp; Construction | {{ pageTitle }}">
 	<meta property="og:site_name" content="RT Halliday Stonework">
 	<meta name="description" content="RT Halliday Stonework: Dry Stone and Mortar Core Walling, Stone Facing, Landscaping and general building">
@@ -62,7 +67,7 @@
 				<div class="row">
 					<div class="col-md-12">
 						<div class="row">
-							<div class="col-md-4 col-md-push-4 text-center"> <img class="footer-logo" src="img/logo-black.png" alt="footer-logo">
+							<div class="col-md-4 col-md-push-4 text-center"> <img class="footer-logo" src="img/logo.png" alt="footer-logo">
 								<div class="social">
 									<ul>
 										<li><a href="http://facebook.com/" target="_blank"><span class="ti-facebook"></span></a></li>

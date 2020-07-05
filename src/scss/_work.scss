@@ -1,4 +1,4 @@
-.product {
+.work {
 	@extend %section-padding;
 
 	h3 {
@@ -54,7 +54,7 @@
 				@include smartphone {
 					width: 100%;
 				}
-				a {
+				a,span {
 					position: relative;
 
 					img {
@@ -62,10 +62,10 @@
 						margin: 0;
 						transition: all 500ms ease-in-out;
 
-						&.product-list-primary-img {
+						&.work-list-primary-img {
 							opacity: 1;
 						}
-						&.product-list-secondary-img {
+						&.work-list-secondary-img {
 							opacity: 0;
 							position: absolute;
 							left: 0;
@@ -76,10 +76,10 @@
 					}
 					&:hover {
 						img {
-							&.product-list-primary-img {
+							&.work-list-primary-img {
 								opacity: 0;
 							}
-							&.product-list-secondary-img {
+							&.work-list-secondary-img {
 								opacity: 1;
 							}
 						}
@@ -88,7 +88,7 @@
 			}
 		}
 		&-vertical {
-			& .product-list-right {
+			& .work-list-right {
 				width: 100%;
 				text-align: center;
 			}
@@ -119,11 +119,11 @@
 	.swiper-slide img {
 		width: 100%;
 	}
-	.product-slider {
+	.work-slider {
 		overflow: hidden;
 		width: 100%;
 	}
-	//product modal
+	//work modal
 	&-modal {
 		.modal-dialog {
 			margin: 0;

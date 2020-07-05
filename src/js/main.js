@@ -84,13 +84,13 @@ var swiper = new Swiper('.testimonials-slider', {
     prevButton: '.testimonials-slider-prev'
 });
 
-// product list
-var swiper = new Swiper('.product-list-slider', {
+// recent work list
+var swiper = new Swiper('.work-list-slider', {
     slidesPerView: 3,
-    pagination: '.product-list-pagination',
+    pagination: '.work-list-pagination',
     paginationClickable: true,
-    nextButton: '.product-list-slider-next',
-    prevButton: '.product-list-slider-prev',
+    nextButton: '.work-list-slider-next',
+    prevButton: '.work-list-slider-prev',
     spaceBetween: 30,
     breakpoints: {
         1024: {
