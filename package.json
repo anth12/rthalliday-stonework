@@ -1,15 +1,10 @@
 {
   "name": "rthalliday-stonework",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel src/index.html",
-    "build": "parcel build src/*.html"
-  },
-  "targets": {
-    "app": {
-      "distDir": "./dist"
-    }
+    "dev": "parcel serve ./src/index.html",
+    "build": "parcel build ./src/*.html"
   },
   "author": "Anthony Halliday",
   "license": "ISC",
