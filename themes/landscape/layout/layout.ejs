@@ -1,0 +1,13 @@
+<%- partial('_partial/head') %>
+<body data-offset="50" data-spy="scroll" data-target=".navbar">
+
+  <%- partial('_partial/header', null, {cache: !config.relative_link}) %>
+
+  <%- body %>
+
+  <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
+
+  <%- partial('_partial/after-footer') %>
+
+</body>
+</html>

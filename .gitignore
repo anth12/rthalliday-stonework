@@ -1,7 +1,7 @@
+.DS_Store
+Thumbs.db
+db.json
+*.log
 node_modules/
-dist/
-.parcel-cache/
-site/data/webpack.json
-/npm-debug.log
-yarn-error.log
-package-lock.json
+public/
+.deploy*/
