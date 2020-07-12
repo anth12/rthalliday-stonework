@@ -1,0 +1,28 @@
+.banner-small{
+	background-size: cover;
+	height: 40vh;
+	background-position-y: center;
+	position: relative;
+
+	&:after{
+		content: '';
+		background: rgba(0, 0, 0, 0.2);
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		position: absolute;
+		z-index: 1;
+	}
+
+	h1, h2{
+		color: #fff;
+		max-width: 600px;
+		margin: 0 auto 30px;
+		position: relative;
+		padding: 0 45px;
+		text-align: center;
+		padding-top: 15vh;
+		z-index: 2;
+	}
+}
