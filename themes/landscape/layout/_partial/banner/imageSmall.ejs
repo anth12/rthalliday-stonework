@@ -1,0 +1,14 @@
+<div class="banner-small" style="background-image: url(<%= banner.image %>);">
+    <h2>
+        <%= banner.title %>
+    </h2>
+    
+    <% if(banner.ctaLink) { %>
+    <div class="text-center"> 
+        <a href="<%= banner.ctaLink %>" class="btn btn-lg  btn-primary">
+            <%= banner.ctaText %>
+        </a> 
+    </div>
+    <% } %>
+    
+</div>

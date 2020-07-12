@@ -1,0 +1,29 @@
+<div class="swiper-slide video" >
+				
+    <div class="video-container">
+      <div class="filter"></div>
+      <video autoplay loop muted playsinline 
+        src="<%= banner.video %>"
+        poster="<%= banner.image %>"
+        class="fillWidth">
+        </video>
+      <!-- <div class="poster hidden">
+        <img src="<%= banner.image %>" alt="">
+      </div> -->
+    </div>
+
+<div class="video-overlay">
+    <img src="img/logo-white.png" alt="RT Halliday Stonework logo" class="main-logo">
+    <h2 class="home-slider-title-main">
+        <%= banner.title %>
+    </h2>
+    
+    <div class="home-buttons text-center"> 
+        <a href="<%= banner.ctaLink %>" class="btn btn-lg  btn-primary">
+            <%= banner.ctaText %>
+        </a> 
+    </div>
+        
+    <a class="arrow bounce text-center" href="#about"> <span class="ti-mouse"></span> <span class="ti-angle-double-down"></span> </a>
+</div>
+</div>

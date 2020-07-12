@@ -1,0 +1,66 @@
+
+<section id="contact" class="contact contact-with-map">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h3 class="section-heading">Contact</h3>
+				<!-- <p class="text-center">Got a project you would like to discuss? Send us a message and we'd be happy to talk.</p> -->
+			</div>
+			<div class="col-md-3">
+				<div class="contact-data">
+					<ul>
+						<li><span class="ti-mobile icon"></span>
+							<a href="tel:07723322156">077233 22156</a>
+						</li>
+						<li><span class="ti-email icon"></span>
+							<a href="mailto:RTHalliday@live.co.uk">RTHalliday@live.co.uk</a>
+						</li>
+						<li><span class="ti-pin icon"></span>
+							Mallerstang, Kirkby Stephen, Cumbria
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-8 col-md-push-1">
+				<!-- CONTACT FORM -->
+				<div class="contact-form">
+					<form>
+						<div class="form-group">
+							<input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
+						</div>
+
+						<div class="row">
+							<div class="col-sm-6">
+								<div class="form-group">
+									<input type="text" class="form-control" id="contact-email" name="contact-email" placeholder="Email" required>
+								</div>
+							</div>
+
+							<div class="col-sm-6">
+								<div class="form-group">
+									<input type="text" class="form-control" id="mobile" name="mobile" placeholder="Mobile Number" required>
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<textarea class="form-control" id="message" placeholder="Message" maxlength="140" rows="7"></textarea>
+						</div>
+
+						<button type="button" type="button" id="submit" name="submit" class="btn btn-primary btn-lg text-center float-right">Send</button>
+					</form>
+				</div>
+				<!-- / CONTACT FORM -->
+			</div>
+		</div>
+    </div>
+    
+    <% if(showMap) { %>
+	<!-- GOOGLE MAP CONTAINER -->
+	<div class="maps">
+		<div id="map-canvas" style="height: 500px; width: 100%;"></div>
+	</div>
+    <!-- / GOOGLE MAP CONTAINER -->
+    <% } %>
+    
+</section>

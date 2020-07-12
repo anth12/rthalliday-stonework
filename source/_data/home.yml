@@ -1,4 +1,4 @@
-banner:
+banners:
 
 - image: /img/slider/slide1.jpg
   video: /img/cover.mp4
@@ -7,13 +7,14 @@ banner:
   ctaLink: /work/
 
 - image: /img/slider/slide2.jpg
-  video: /img/cover.mp4
+  video: 
   title: Specialists in Stonework and the undertaking and project management of new builds, barn conversions and renovations.	
   ctaText: Our work
   ctaLink: /work/
 
-about:
-  title: About
+sections:
+- title: About
+  style: left
   content: |
     <p>
       With our trade of stone work been passed down the generations 
@@ -25,8 +26,8 @@ about:
   ctaText: Continue Reading
   ctaLink: /about/
 
-project:
-  title: Project management
+- title: Project management
+  style: center
   content: |
     <p>
       Having built our own family home we appreciate the 
@@ -42,8 +43,8 @@ project:
   ctaText: Find out more
   ctaLink: /project-management/
 
-stonework:
-  title: Stonework
+- title: Stonework
+  style: right
   content: |
     <p>
       We are also passionate about producing beautiful stonework 

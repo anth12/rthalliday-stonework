@@ -1,0 +1,17 @@
+<div class="about-background row no-margin" style="background-image: url(<%= content.image %>);">
+    <div class="col-md-4 about-white-box col-md-offset-4">
+        <h2 class="section-claim wow fadeInDown" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInDown;">
+            <%= content.title %>
+        </h2>
+
+        <%- content.content %>
+
+        <% if(content.ctaLink) { %>
+            <a href="<%= content.ctaLink %>" class="btn btn-default">
+                <%= content.ctaText %>
+            </a>
+        <% } %>
+            
+    </div>
+    <div class="col-md-4"></div>
+</div>

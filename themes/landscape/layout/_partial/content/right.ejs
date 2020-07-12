@@ -1,0 +1,16 @@
+<div class="about-background row no-margin" style="background-image: url(<%= content.image %>);">
+    <div class="col-md-6 about-black-box col-md-offset-6">
+        <h3 class="section-heading">
+            <%= content.title %>
+        </h3>
+
+        <%- content.content %>
+        
+        <% if(content.ctaLink) { %>
+            <a href="<%= content.ctaLink %>" class="btn btn-default">
+                <%= content.ctaText %>
+            </a>
+        <% } %>
+        
+    </div>
+</div>

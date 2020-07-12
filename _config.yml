@@ -101,4 +101,34 @@ deploy:
   type: ''
 
 node_sass:
-  outputStyle: compressed
+  #outputStyle: compressed
+
+all_minifier: true
+
+html_minifier:
+  enable: true
+  ignore_error: false
+  silent: false
+  exclude:
+
+css_minifier:
+  enable: true
+  silent: false
+
+js_minifier:
+  enable: true
+  mangle: true
+  silent: false
+  output:
+  compress:
+  exclude: 
+    - '*.min.js'
+
+image_minifier:
+  enable: true
+  interlaced: false
+  multipass: false
+  optimizationLevel: 2
+  pngquant: false
+  progressive: false
+  silent: false

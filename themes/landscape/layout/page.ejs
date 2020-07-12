@@ -1,13 +1,21 @@
-%- partial('_partial/article', {post: page, index: false}) %>
 
-<h1></h1>
-<h1></h1>
-<h1></h1>
-<h1></h1>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<%= JSON.stringify(page) %>
+<% if(page.banner) { %>
+    <%- partial('_partial/banner/imageSmall', {banner: page.banner}) %>
+<% } %>
+
+<% if(page.sections) { %>
+    <%- partial('_partial/content/collection', {sections: page.sections}) %>
+<% } %>
+
+<% if(page.content) { %>
+<div class="row content-row">
+        <div class="col-md-8 col-md-offset-2">
+            <%- page.content %>
+        </div>
+    </div>
+</div>
+<% } %>
+
+<% if(!page.disableContact) { %>
+    <%- partial('_partial/contact', {showMap: page.showContactMap}) %>
+<% } %>

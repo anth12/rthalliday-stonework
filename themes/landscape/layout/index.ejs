@@ -3,34 +3,15 @@
 <section class="home section image-slider" id="home">
 	<div class="home-slider text-center">
 		<div class="swiper-wrapper">
-			<div class="swiper-slide video" style="background: url(img/slider/slide2.jpg);">
-				
-					<div class="video-container">
-					  <div class="filter"></div>
-					  <video autoplay loop muted playsinline src="/img/cover.mp4" class="fillWidth"></video>
-					  <div class="poster hidden">
-						<img src="img/slider/slide2.jpg" alt="">
-					  </div>
-					</div>
-
-				<div class="video-overlay">
-					<img src="img/logo-white.png" alt="RT Halliday Stonework logo" class="main-logo">
-					<h2 class="home-slider-title-main">
-						Expert Stonemasonry
-					</h2>
-					<div class="home-buttons text-center"> <a href="#works" class="btn btn-lg  btn-primary">our works</a> </div>
-					
-					<a class="arrow bounce text-center" href="#about"> <span class="ti-mouse"></span> <span class="ti-angle-double-down"></span> </a>
-				</div>
-			</div>
-
-			<div class="swiper-slide" style="background: url(img/slider/slide1.jpg);">
-				<h2 class="home-slider-title-main">
-					Specialists in Stonework and the undertaking and project management of new builds, barn conversions and renovations.	
-				</h2>
-				<div class="home-buttons text-center"> <a href="#works" class="btn btn-lg  btn-primary">our works</a> </div>
-				<a class="arrow bounce text-center" href="#about"> <span class="ti-mouse"></span> <span class="ti-angle-double-down"></span> </a>
-			</div>
+			
+			<% for (var i in site.data.home.banners) { %>
+				<% if(site.data.home.banners[i].video != null) { %>
+					<%- partial('_partial/banner/video', {banner: site.data.home.banners[i]}) %>
+				<% } else { %>
+					<%- partial('_partial/banner/image', {banner: site.data.home.banners[i]}) %>
+				<% } %>
+			<% } %>	
+			
 
 		</div>
 		<div class="home-pagination"></div>
@@ -121,50 +102,8 @@
     </div>
 
 
-<section class="container-fluid about white-color no-padding" id="about">
-	<div class="about-background row no-margin" style="background-image: url(<%= site.data.home.about.image %>);">
-		<div class="col-md-6 about-black-box">
-			<h3 class="section-heading">
-				<%= site.data.home.about.title %>
-			</h3>
-			<%- site.data.home.about.content %>
-			<a href="<%= site.data.home.about.ctaLink %>" class="btn btn-default">
-				<%= site.data.home.about.ctaText %>
-			</a>
-		</div>
-		<div class="col-md-6"></div>
-	</div>
+<%- partial('_partial/content/collection', {sections: site.data.home.sections}) %>
 
-	<div class="about-background row no-margin" style="background-image: url(<%= site.data.home.about.image %>);">
-		<div class="col-md-4 about-white-box col-md-offset-4">
-			<h2 class="section-claim wow fadeInDown" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInDown;">
-				<%= site.data.home.project.title %>
-			</h2>
-			
-			<%- site.data.home.project.content %>
-
-			<a href="<%= site.data.home.project.ctaLink %>" class="btn btn-default">
-				<%= site.data.home.project.ctaText %>
-			</a>
-				
-		</div>
-		<div class="col-md-4"></div>
-	</div>
-
-	<div class="about-background row no-margin" style="background-image: url(<%= site.data.home.stonework.image %>);">
-		<div class="col-md-6 about-black-box col-md-offset-6">
-			<h3 class="section-heading">
-				<%= site.data.home.stonework.title %>
-			</h3>
-
-			<%- site.data.home.stonework.content %>
-
-			<a href="<%= site.data.home.stonework.ctaLink %>" class="btn btn-default">
-				<%= site.data.home.stonework.ctaText %>
-			</a>
-		</div>
-	</div>
-</section>
 
 <section class="testimonials" id="testimonials">
 	<div class="container">
@@ -198,65 +137,4 @@
 	</div>
 </section>
 
-
-<section id="contact" class="contact contact-with-map">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<h3 class="section-heading">Contact</h3>
-				<!-- <p class="text-center">Got a project you would like to discuss? Send us a message and we'd be happy to talk.</p> -->
-			</div>
-			<div class="col-md-3">
-				<div class="contact-data">
-					<ul>
-						<li><span class="ti-mobile icon"></span>
-							<a href="tel:07723322156">077233 22156</a>
-						</li>
-						<li><span class="ti-email icon"></span>
-							<a href="mailto:RTHalliday@live.co.uk">RTHalliday@live.co.uk</a>
-						</li>
-						<li><span class="ti-pin icon"></span>
-							Mallerstang, Kirkby Stephen, Cumbria
-						</li>
-					</ul>
-				</div>
-			</div>
-			<div class="col-md-8 col-md-push-1">
-				<!-- CONTACT FORM -->
-				<div class="contact-form">
-					<form>
-						<div class="form-group">
-							<input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
-						</div>
-
-						<div class="row">
-							<div class="col-sm-6">
-								<div class="form-group">
-									<input type="text" class="form-control" id="contact-email" name="contact-email" placeholder="Email" required>
-								</div>
-							</div>
-
-							<div class="col-sm-6">
-								<div class="form-group">
-									<input type="text" class="form-control" id="mobile" name="mobile" placeholder="Mobile Number" required>
-								</div>
-							</div>
-						</div>
-						
-						<div class="form-group">
-							<textarea class="form-control" id="message" placeholder="Message" maxlength="140" rows="7"></textarea>
-						</div>
-
-						<button type="button" type="button" id="submit" name="submit" class="btn btn-primary btn-lg text-center float-right">Send</button>
-					</form>
-				</div>
-				<!-- / CONTACT FORM -->
-			</div>
-		</div>
-	</div>
-	<!-- GOOGLE MAP CONTAINER -->
-	<div class="maps">
-		<div id="map-canvas" style="height: 500px; width: 100%;"></div>
-	</div>
-	<!-- / GOOGLE MAP CONTAINER -->
-</section>
+<%- partial('_partial/contact', {showMap: true}) %>

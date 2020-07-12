@@ -1,0 +1,15 @@
+<section class="container-fluid about white-color no-padding" id="about">
+    
+    <% for(var i in sections) { %>
+
+        <% if(sections[i].style == 'left') { %>
+            <%- partial('_partial/content/left', {content: sections[i]}) %>
+        <% } else if(sections[i].style == 'right') { %>
+            <%- partial('_partial/content/right', {content: sections[i]}) %>
+        <% } else { %>
+            <%- partial('_partial/content/center', {content: sections[i]}) %>
+        <% } %>
+
+    <% } %>
+	
+</section>
