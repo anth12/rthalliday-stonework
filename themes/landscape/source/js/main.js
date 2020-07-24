@@ -10,48 +10,6 @@ wow = new WOW({
 });
 wow.init();
 
-// initialize tooltips and popovers
-$(function () {
-$('[data-toggle="tooltip"]').tooltip();
-$('[data-toggle=popover]').popover();
-})
-
-// js counters
-$('#about-counter').bind('inview', function(event, visible, visiblePartX, visiblePartY) {
-    if (visible) {
-        $(this).find('.timer').each(function() {
-            var $this = $(this);
-            $({
-                Counter: 0
-            }).animate({
-                Counter: $this.text()
-            }, {
-                duration: 2000,
-                easing: 'swing',
-                step: function() {
-                    $this.text(Math.ceil(this.Counter));
-                }
-            });
-        });
-        $(this).unbind('inview');
-    }
-});
- 
-// cart widget toggle
-$(function() {
-    $("#items-counter").click(function() {
-        $("body").toggleClass("cart-widget-open");
-    });
-    $("#cart-widget-close").click(function() {
-        $("body").toggleClass("cart-widget-open");
-    });
-
-        $(".cart-widget-close-overlay").click(function() {
-        $("body").toggleClass("cart-widget-open");
-    });
-
-});
-
 //initialize swipers
 //home slider
 var swiper = new Swiper('.home-slider', {
@@ -155,18 +113,27 @@ $(".navbar-nav li a[href^='#']").on('click', function(e) {
 
 });
 
-mapboxgl.accessToken = 'pk.eyJ1IjoiYW50aDEyIiwiYSI6ImNrY2FvdXE3ZjF4NDIyem8wcWhsNTM0eG0ifQ.RzZvSEyKhL4QDtdQknZeDA';
-var map = new mapboxgl.Map({
-    container: 'map-canvas',
-    //style: 'mapbox://styles/mapbox/streets-v11',
-    style: 'mapbox://styles/anth12/ckcaq0e9q5e931imt36gdee2n',
-    center: [-2.5,54.43],
-    zoom: 8.5
-  });
+var mapBoxTimeout = setInterval(function(){
 
-  map.addControl(new mapboxgl.NavigationControl());
-  map.scrollZoom.disable();
+    if(typeof(mapboxgl) === "undefined")
+        return;
 
-  var marker = new mapboxgl.Marker();
-  marker.setLngLat([-2.3398478,54.4332042]);
-  marker.addTo(map);
+    clearInterval(mapBoxTimeout);
+    
+    mapboxgl.accessToken = 'pk.eyJ1IjoiYW50aDEyIiwiYSI6ImNrY2FvdXE3ZjF4NDIyem8wcWhsNTM0eG0ifQ.RzZvSEyKhL4QDtdQknZeDA';
+    var map = new mapboxgl.Map({
+        container: 'map-canvas',
+        //style: 'mapbox://styles/mapbox/streets-v11',
+        style: 'mapbox://styles/anth12/ckcaq0e9q5e931imt36gdee2n',
+        center: [-2.5,54.43],
+        zoom: 8.5
+    });
+
+    map.addControl(new mapboxgl.NavigationControl());
+    map.scrollZoom.disable();
+
+    var marker = new mapboxgl.Marker();
+    marker.setLngLat([-2.3398478,54.4332042]);
+    marker.addTo(map);
+
+}, 500);

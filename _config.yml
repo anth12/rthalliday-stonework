@@ -130,5 +130,5 @@ image_minifier:
   multipass: false
   optimizationLevel: 2
   pngquant: false
-  progressive: false
+  progressive: true
   silent: false
