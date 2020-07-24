@@ -1,6 +1,8 @@
 .testimonials {
 	@extend %section-padding;
-	background: url('../img/testimonials.jpg') no-repeat scroll center center / cover $main-light-color;
+	background: url('/img/logo-white.png') no-repeat center center  #646464;
+	background-size: 150px;
+	background-color: #646464;
 
 	&-container {
 		max-width: 700px;

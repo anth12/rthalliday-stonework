@@ -166,7 +166,8 @@
   font-size: $font-size-large;
   line-height: $line-height-computed;
   height: $navbar-height;
-
+  padding: 10px!important;
+  
   &:hover,
   &:focus {
     text-decoration: none;
@@ -174,6 +175,7 @@
 
   > img {
     display: block;
+    height: 100%!important;
   }
 
   @media (min-width: $grid-float-breakpoint) {
