@@ -113,13 +113,38 @@ $(".navbar-nav li a[href^='#']").on('click', function(e) {
 
 });
 
-var mapBoxTimeout = setInterval(function(){
-
-    if(typeof(mapboxgl) === "undefined")
-        return;
-
-    clearInterval(mapBoxTimeout);
+if($('#map-canvas').length > 0){
     
+    setTimeout(function(){
+        loadMapDependencies()
+    }, 500);
+      
+    var mapBoxTimeout = setInterval(function(){
+
+        if(typeof(mapboxgl) === "undefined")
+            return;
+
+        clearInterval(mapBoxTimeout);        
+        renderMap();
+    }, 150);
+}
+
+function loadMapDependencies(){
+     /* Defer mapbox js */
+     var mapBoxJs = document.createElement('script');
+     mapBoxJs.src = 'https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.js';
+     mapBoxJs.defer = true;
+     document.head.appendChild(mapBoxJs)
+ 
+     /* Defer mapbox css */
+     var mapBoxCss = document.createElement('link');
+     mapBoxCss.rel = 'stylesheet';
+     mapBoxCss.href = 'https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.css';
+     mapBoxCss.type = 'text/css';
+     document.head.appendChild(mapBoxCss)
+}
+
+function renderMap(){
     mapboxgl.accessToken = 'pk.eyJ1IjoiYW50aDEyIiwiYSI6ImNrY2FvdXE3ZjF4NDIyem8wcWhsNTM0eG0ifQ.RzZvSEyKhL4QDtdQknZeDA';
     var map = new mapboxgl.Map({
         container: 'map-canvas',
@@ -135,5 +160,4 @@ var mapBoxTimeout = setInterval(function(){
     var marker = new mapboxgl.Marker();
     marker.setLngLat([-2.3398478,54.4332042]);
     marker.addTo(map);
-
-}, 500);
+}
